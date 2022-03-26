@@ -14,17 +14,22 @@ public class STOMPMessagesHandler {
     SimpMessagingTemplate msgt;
 
     @MessageMapping("/draw")
-    public void handleDrawEvent(String a) throws Exception{
+    public void handleDrawEvent(String a) throws Exception {
 
         msgt.convertAndSend("/topic/draw", a);
     }
 
     @MessageMapping("/color")
-    public void handleColorEvent(String color) throws Exception{
+    public void handleColorEvent(String color) throws Exception {
 
         msgt.convertAndSend("/topic/color", color);
     }
 
+    @MessageMapping("/message")
+    public void handleChat(String mensaje) {
+        System.out.println(mensaje);
+        msgt.convertAndSend("/topic/message", mensaje);
+    }
 }
 
 

@@ -24,6 +24,11 @@ var paint =(function () {
         }
     }
 
+    let publishMessage = (message)=>{
+        let contenido = $('#chatbox').val();
+        $('#chatbox').html(contenido+"\n"+message);
+    }
+
     function connectAndSubscribe() {
         let socket = new SockJS('/stompendpoint');
         stompClient = Stomp.over(socket);
@@ -43,7 +48,17 @@ var paint =(function () {
             stompClient.subscribe('/topic/clearCanva',function (eventbody){
                 clearCanva()
             })
+            stompClient.subscribe('/topic/message', function (eventbody) {
+                let message = eventbody.body;
+                console.log(message);
+                publishMessage(message);
+            })
         })
+    }
+
+    function message(msg){
+        stompClient.send('/app/message', {}, msg);
+        $('#usermsg').val("");
     }
 
     function getOffset(obj) {
@@ -122,7 +137,8 @@ var paint =(function () {
         mandarColor: mandarColor,
         clearCanvaSend: clearCanvaSend,
         clearCanva:clearCanva,
-        selectID:selectID
+        selectID:selectID,
+        message:message
 
     }
 
