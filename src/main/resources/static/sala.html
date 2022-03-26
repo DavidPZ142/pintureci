@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sala</title>
+    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"  href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/sala.css">
+
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="js/paint.js"></script>
+    <script src="js/drawPrueba.js"></script>
+</head>
+<body onload="paint.init()" class="fondo">
+<h3 class="">Sala de juego</h3>
+<h3 id="palabraDibujar"></h3>
+<input type="number" id="prueba" placeholder="Ingrese su id">
+<button onclick="paint.selectID($('#prueba').val())">Ingrese su id</button>
+<h6 id="pruebaID"></h6>
+<canvas id="myCanvas" width="600" height="600" style="border:10px solid blue ; "> </canvas>
+<br>
+<button class="btn btn-primary" onclick="paint.selectColor('blue')">Azul</button>
+<button type="button" class="btn btn-success" onclick="paint.selectColor('green')"> Verde </button>
+<button type="button" class="btn btn-danger" onclick="paint.selectColor('red')"> Rojo </button>
+<button type="button" class="btn btn-warning" onclick="paint.selectColor('yellow')"> Amarillo </button>
+<button type="button" class="btn btn-dark" onclick="paint.selectColor('black')"> Negro </button>
+<button type="button" class="btn btn-outline-warning" onclick="paint.clearCanvaSend()">Limpiar Tablero!</button>
+
+
+</body>
+</html>
