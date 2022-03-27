@@ -25,9 +25,15 @@ public class STOMPMessagesHandler {
         msgt.convertAndSend("/topic/color", color);
     }
 
+    @MessageMapping("/color")
+    public void handleWord(String word) throws Exception {
+
+        msgt.convertAndSend("/topic/word", word);
+    }
+
     @MessageMapping("/message")
     public void handleChat(String mensaje) {
-        System.out.println(mensaje);
+
         msgt.convertAndSend("/topic/message", mensaje);
     }
 }
