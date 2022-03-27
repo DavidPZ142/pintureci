@@ -12,9 +12,10 @@
     <script src="/webjars/stomp-websocket/stomp.min.js"></script>
     <script src="js/paint.js"></script>
     <script src="js/drawPrueba.js"></script>
+    <script src="js/app.js"></script>
 </head>
 <body onload="paint.init()" class="fondo">
-    <h3 class="">Sala de juego</h3>
+    <h3 id = "hola"></h3>
     <h3 id="palabraDibujar"></h3>
     <input type="number" id="prueba" placeholder="Ingrese su id">
     <button onclick="paint.selectID($('#prueba').val())">Ingrese su id</button>
