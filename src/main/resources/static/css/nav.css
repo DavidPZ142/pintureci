@@ -13,11 +13,11 @@
 
 /* Overlay closing cross */
 .overlay .overlay-close {
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    right: 32px;
-    top: 32px;
+	width: 26px;
+	height: 26px;
+	position: absolute;
+	right: 32px;
+	top: 32px;
 	overflow: hidden;
 	border: none;
 	background: url(../images/cross.png) no-repeat center center;
@@ -26,7 +26,7 @@
 	outline: none;
 	z-index: 100;
 	cursor: pointer;
-	
+
 }
 
 /* Menu style */
@@ -57,13 +57,13 @@
 }
 
 .overlay ul li a {
-    font-size: 19px;
+	font-size: 19px;
 	font-weight: 300;
 	display: block;
 	color: #fff;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
-    font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 .overlay ul li a:hover,
@@ -122,8 +122,8 @@
 }
 @media(max-width:1050px){
 	.overlay ul li {
-    height: calc(74% / 5);
-}
+		height: calc(74% / 5);
+	}
 
 
 }
