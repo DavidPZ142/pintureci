@@ -7,13 +7,14 @@ var paint =(function () {
     let pruebaID = null;
     const nombres = ["hola", "EdificioG", "Manchas", "Fundador", "Civil" ]
     let idActual = 1;
-
+    let info = JSON.parse(localStorage.getItem("id"));
+    let palabra = "";
 
     function init() {
         const aleatorio = nombres[Math.floor(Math.random() * nombres.length)]
-        let info = JSON.parse(localStorage.getItem("id"))
+        palabra = aleatorio;
         $('#palabraDibujar').html("La palabra a dibujar es: " + aleatorio)
-        $('#hola').html("Bienvenido al juego : "+info.name + "Tu id es: " + info.id)
+        $('#hola').html("Bienvenido al juego : "+info.name + " Tu id es: " + info.id)
         let suID = info.id
         let canvas = document.getElementById("myCanvas");
         paint.connectAndSubscribe();
@@ -54,14 +55,13 @@ var paint =(function () {
             })
             stompClient.subscribe('/topic/message', function (eventbody) {
                 let message = eventbody.body;
-                console.log(message);
                 publishMessage(message);
             })
         })
     }
 
     function message(msg){
-        stompClient.send('/app/message', {}, msg);
+        stompClient.send('/app/message', {},info.name+ ": "+ msg);
         $('#usermsg').val("");
     }
 
