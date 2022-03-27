@@ -1,1 +1,1 @@
-web: java $JAVA_OPT -Dserver.port=$PORT -cp target/classes:target/dependency/* edu.eci.arsw.pintureci.PintureciApplication
+web: java -cp target/classes:target/dependency/* edu.eci.arsw.pintureci.PintureciApplication
