@@ -16,7 +16,7 @@ var paint =(function () {
         let suID = info.id
         let canvas = document.getElementById("myCanvas");
         paint.connectAndSubscribe();
-        publishWord(aleatorio);
+        //publishWord(aleatorio);
         if (window.PointerEvent) {
             if (window.PointerEvent) {
                 canvas.addEventListener("pointerdown", function () {
@@ -66,9 +66,8 @@ var paint =(function () {
         })
     }
 
-    /*function sendword(word){
-        stompClient.send('/app/word',{}, "la palabra a dibujar es: "+ word);
-    }*/
+
+
     function message(msg){
         stompClient.send('/app/message', {},info.name+ ": "+ msg);
         $('#usermsg').val("");
@@ -138,6 +137,16 @@ var paint =(function () {
         $('#pruebaID').html("Su ID es: " +pruebaID)
     }
 
+    function sendword(){
+        let word = "nitWord"
+        stompClient.send('/app/word',{} , word);
+    }
+
+    function recibeWord(word){
+        let recibe = word;
+        $('#palabraDibujar').html("Palabra a dibujar"+ word)
+    }
+
     return{
         init:init,
         getOffset: getOffset,
@@ -151,7 +160,8 @@ var paint =(function () {
         clearCanvaSend: clearCanvaSend,
         clearCanva:clearCanva,
         selectID:selectID,
-        message:message
+        message:message,
+        sendword:sendword
 
     }
 

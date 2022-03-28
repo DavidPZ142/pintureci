@@ -11,15 +11,16 @@
     <script src="/webjars/sockjs-client/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/stomp.min.js"></script>
     <script src="js/paint.js"></script>
-    <script src="js/drawPrueba.js"></script>
+
     <script src="js/app.js"></script>
 </head>
 <body onload="paint.init()" class="fondo">
-    <h3 id = "hola"></h3>
-    <h3 id="palabraDibujar"></h3>
-    <input type="number" id="prueba" placeholder="Ingrese su id">
-    <button onclick="paint.selectID($('#prueba').val())">Ingrese su id</button>
-    <h6 id="pruebaID"></h6>
+    <h3 id = "hola" class="letras"></h3>
+    <h3 id="palabraDibujar" class="letras"></h3>
+
+    <h6 id="pruebaID" class="letras"></h6>
+    <button type="button" class="btn btn-info" onclick="paint.sendword()"> Inicia Juego</button>
+    <br>
     <canvas id="myCanvas" width="600" height="600" > </canvas>
     <br>
     <button class="btn btn-primary" onclick="paint.selectColor('blue')">Azul</button>

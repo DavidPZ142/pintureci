@@ -1,7 +1,7 @@
 package edu.eci.arsw.pintureci.controller;
 
 
-import edu.eci.arsw.pintureci.model.Point;
+
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -27,7 +27,9 @@ public class STOMPMessagesHandler {
 
     @MessageMapping("/word")
     public void handleWord(String word) throws Exception {
-
+        String[] lista = {"Decano","Manchas","EdificioG","Puente","K1","Laboratorio","AGEO"};
+        int getRandomValue = (int) (Math.random()* lista.length);
+        word = lista[getRandomValue];
         msgt.convertAndSend("/topic/word", word);
     }
 
