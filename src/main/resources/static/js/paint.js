@@ -8,16 +8,15 @@ var paint =(function () {
     const nombres = ["hola", "EdificioG", "Manchas", "Fundador", "Civil" ]
     let idActual = 1;
     let info = JSON.parse(localStorage.getItem("id"));
-    let palabra = "";
+
 
     function init() {
-        const aleatorio = nombres[Math.floor(Math.random() * nombres.length)]
-        palabra = aleatorio;
-        $('#palabraDibujar').html("La palabra a dibujar es: " + aleatorio)
+        const aleatorio = nombres[Math.floor(Math.random() * nombres.length)];
         $('#hola').html("Bienvenido al juego : "+info.name + " Tu id es: " + info.id)
         let suID = info.id
         let canvas = document.getElementById("myCanvas");
         paint.connectAndSubscribe();
+        publishWord(aleatorio);
         if (window.PointerEvent) {
             if (window.PointerEvent) {
                 canvas.addEventListener("pointerdown", function () {
@@ -27,6 +26,10 @@ var paint =(function () {
                 canvas.addEventListener("pointerup", endPointer2, false);
             }
         }
+
+    }
+    let publishWord = (word) => {
+        $('#palabraDibujar').html("la palabra a dibujar es: " + word);
     }
 
     let publishMessage = (message)=>{
@@ -57,9 +60,15 @@ var paint =(function () {
                 let message = eventbody.body;
                 publishMessage(message);
             })
+            stompClient.subscribe('/topic/word', function (eventbody){
+                publishWord(eventbody.body);
+            })
         })
     }
 
+    /*function sendword(word){
+        stompClient.send('/app/word',{}, "la palabra a dibujar es: "+ word);
+    }*/
     function message(msg){
         stompClient.send('/app/message', {},info.name+ ": "+ msg);
         $('#usermsg').val("");

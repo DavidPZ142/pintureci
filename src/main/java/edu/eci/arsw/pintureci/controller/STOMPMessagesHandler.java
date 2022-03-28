@@ -25,7 +25,7 @@ public class STOMPMessagesHandler {
         msgt.convertAndSend("/topic/color", color);
     }
 
-    @MessageMapping("/color")
+    @MessageMapping("/word")
     public void handleWord(String word) throws Exception {
 
         msgt.convertAndSend("/topic/word", word);
