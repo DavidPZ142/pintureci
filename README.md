@@ -36,4 +36,18 @@ Como inicio del proyectó se realizó la implementación básica del juego, en e
 
 ![](https://github.com/DavidPZ666/pintureci/blob/master/img/Diagrama%20de%20Componentes.png)
 
+- Diagrama de despliegue: Diagrama explicativo que demuestra la disposición fisica del software usado en el proyecto
+
+![](https://github.com/DavidPZ666/pintureci/blob/master/img/Diagrama%20de%20Despliegue.jpeg)
+
+- Diagramas de actividades: Diagramas explicativo que representa las actividades realizadas en el proyecto
+
+![](https://github.com/DavidPZ666/pintureci/blob/master/img/actividades1.jpeg)
+
+![](https://github.com/DavidPZ666/pintureci/blob/master/img/actividades2.jpeg)
+
+![](https://github.com/DavidPZ666/pintureci/blob/master/img/actividades3.jpeg)
+
+
+
 
