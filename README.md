@@ -27,14 +27,13 @@ Como inicio del proyectó se realizó la implementación básica del juego, en e
 
 - Login del juego: En el que el usuario ingresara su nickname y el identificador que usará en la ronda (en próximos sprint's este uso de identificador cambiará para una interfaz más intuitiva para el usuario).
 
-![](https://github.com/DavidPZ666/pintureci/blob/main/img/login.png)
+![](img/login.png)
 
 - Pantalla de juego: En el que el usuario interactuará con el juego, teniendo la pantalla de dibujo si es su turno (con sus respectivos colores, y boton para realizar una limpieza de pantalla), un chat para interactuar con los demás usuarios y/o adivinar la palabra en caso de no estar dibujando, adicional encontrará su nombre e identificador en la parte superior de la pantalla
-
-![](https://github.com/DavidPZ666/pintureci/blob/main/img/juego.png)
+![](img/juego.png)
 
 - Diagrama de componentes: Diagrama explicativo dividido en componentes y aplicaciones usadas en el proyecto mostrando como interactuan entre ellas.
 
-![](https://github.com/DavidPZ666/pintureci/blob/main/img/Diagrama_de_Componentes.png)
+![](https://github.com/DavidPZ666/pintureci/blob/master/img/Diagrama%20de%20Componentes.png)
 
 
