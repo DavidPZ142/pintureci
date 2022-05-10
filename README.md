@@ -1,5 +1,6 @@
 # Pintureci
 
+[![CircleCI](https://circleci.com/gh/DavidPZ666/pintureci/tree/master.svg?style=svg)](https://circleci.com/gh/DavidPZ666/pintureci/tree/master)
 ## Authors
 
 * [David Pérez](https://github.com/DavidPZ666)
