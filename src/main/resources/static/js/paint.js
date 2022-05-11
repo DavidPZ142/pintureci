@@ -5,8 +5,9 @@ var paint =(function () {
     var lastPt = null;
     let color = 'black';
     let pruebaID = null;
-    const nombres = ["hola", "EdificioG", "Manchas", "Fundador", "Civil" ]
-    let idActual = 1;
+
+    let pointsx =[]
+    let pointsy=[]
     let info = JSON.parse(localStorage.getItem("id"));
 
 
@@ -15,7 +16,17 @@ var paint =(function () {
         $('#hola').html("Bienvenido al juego : "+info.name + " Tu id es: " + info.id)
         let suID = info.id
         let canvas = document.getElementById("myCanvas");
-        $('#chatbox').html(JSON.parse(localStorage.getItem("chat")))
+        if (JSON.parse(localStorage.getItem("chat") != null)){
+            $('#chatbox').html(JSON.parse(localStorage.getItem("chat")))
+        }
+
+        let a =JSON.parse(localStorage.getItem("pointsX"));
+        let b = JSON.parse(localStorage.getItem("pointsY"));
+        if(a != null) {
+            drawCache(a, b);
+        }
+
+
 
         paint.connectAndSubscribe();
         if (window.PointerEvent) {
@@ -97,6 +108,13 @@ var paint =(function () {
     function drawio(e) {
         let canvas = document.getElementById("myCanvas");
         let ctx = canvas.getContext("2d");
+
+        pointsx.push(e.x)
+        pointsy.push(e.y)
+
+        localStorage.setItem("pointsX", JSON.stringify(pointsx))
+        localStorage.setItem("pointsY", JSON.stringify(pointsy))
+
         if (lastPt != null) {
             ctx.beginPath();
             ctx.moveTo(lastPt.x, lastPt.y);
@@ -148,6 +166,20 @@ var paint =(function () {
     function recibeWord(word){
         let recibe = word;
         $('#palabraDibujar').html("Palabra a dibujar"+ word)
+    }
+
+    function drawCache(pointsx, pointsy){
+
+        let canvas = document.getElementById("myCanvas");
+        let canvasd = canvas.getContext("2d");
+        console.log(pointsy[1])
+        for (let i =1 ; i< pointsy.length;i++){
+
+            canvasd.moveTo(pointsx[i-1],pointsy[i-1]);
+            canvasd.lineTo(pointsx[i],pointsy[i]);
+            canvasd.stroke();
+        }
+
     }
 
     return{
