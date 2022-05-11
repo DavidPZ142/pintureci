@@ -8,6 +8,9 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
+import java.security.SecureRandom;
+import java.util.Random;
+
 @Controller
 public class STOMPMessagesHandler {
     @Autowired
@@ -28,8 +31,9 @@ public class STOMPMessagesHandler {
     @MessageMapping("/word")
     public void handleWord(String word) throws Exception {
         String[] lista = {"Decano","Manchas","EdificioG","Puente","K1","Laboratorio","AGEO"};
-        int getRandomValue = (int) (Math.random()* lista.length);
-        String wordSend = lista[getRandomValue];
+        Random rand = new SecureRandom();
+        int number = rand.nextInt(lista.length);
+        String wordSend = lista[number];
         msgt.convertAndSend("/topic/word", wordSend);
     }
 
