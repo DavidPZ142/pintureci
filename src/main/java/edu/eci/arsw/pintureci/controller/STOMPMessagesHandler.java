@@ -29,8 +29,8 @@ public class STOMPMessagesHandler {
     public void handleWord(String word) throws Exception {
         String[] lista = {"Decano","Manchas","EdificioG","Puente","K1","Laboratorio","AGEO"};
         int getRandomValue = (int) (Math.random()* lista.length);
-        word = lista[getRandomValue];
-        msgt.convertAndSend("/topic/word", word);
+        String wordSend = lista[getRandomValue];
+        msgt.convertAndSend("/topic/word", wordSend);
     }
 
     @MessageMapping("/message")

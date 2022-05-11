@@ -365,7 +365,6 @@ footer {
   width: 89px;
   height: 89px;
   border-radius: 50%;
-  color: #fff;
   line-height: 79px;
   margin: 20px 0px;
 }
@@ -510,7 +509,6 @@ figure.snip1321.hover:after {
 }
 
 .feature-ser-w3l-icon span {
-  font-size: 47px;
   font-size: 47px;
   padding-top: 21px;
   color: #7c88ff;
@@ -790,7 +788,6 @@ footer {
   color: #fff;
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
-  transition: 0.5s all;
   -moz-transition: 0.5s all;
 }
 
