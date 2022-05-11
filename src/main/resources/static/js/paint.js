@@ -11,12 +11,13 @@ var paint =(function () {
 
 
     function init() {
-        const aleatorio = nombres[Math.floor(Math.random() * nombres.length)];
+
         $('#hola').html("Bienvenido al juego : "+info.name + " Tu id es: " + info.id)
         let suID = info.id
         let canvas = document.getElementById("myCanvas");
+        $('#chatbox').html(JSON.parse(localStorage.getItem("chat")))
+
         paint.connectAndSubscribe();
-        //publishWord(aleatorio);
         if (window.PointerEvent) {
             if (window.PointerEvent) {
                 canvas.addEventListener("pointerdown", function () {
@@ -35,6 +36,7 @@ var paint =(function () {
     let publishMessage = (message)=>{
         let contenido = $('#chatbox').val();
         $('#chatbox').html(contenido+"\n"+message);
+        localStorage.setItem("chat", JSON.stringify(contenido+"\n"+message));
     }
 
     function connectAndSubscribe() {
