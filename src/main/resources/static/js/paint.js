@@ -69,7 +69,8 @@ var paint =(function () {
 
 
     function message(msg){
-        stompClient.send('/app/message', {},info.name+ ": "+ msg);
+        const mesg = app.secureText(msg);
+        stompClient.send('/app/message', {},info.name+ ": "+ mesg);
         $('#usermsg').val("");
     }
 

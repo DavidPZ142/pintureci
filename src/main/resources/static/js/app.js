@@ -1,6 +1,7 @@
 
 var app= (function (){
     function saveUser(name, id){
+        name = secureText(name);
         let User = {
             name: name,
             id: id
@@ -11,8 +12,15 @@ var app= (function (){
                 location.href= "sala.html"
             })
     }
+    secureText = (text)=>{
+        const newText = text.replace(/[^a-zA-Z0-9]/g, '');
+        //alert(newText);
+        return newText;
+    }
+
     return{
-        saveUser: saveUser
+        saveUser: saveUser,
+        secureText: secureText
     }
 
 
