@@ -1,6 +1,12 @@
 # Pintureci
 
+## Integracion continua
 [![CircleCI](https://circleci.com/gh/DavidPZ666/pintureci/tree/master.svg?style=svg)](https://circleci.com/gh/DavidPZ666/pintureci/tree/master)
+
+[Enlace de sonarQube](https://tree.taiga.io/project/juan-espinosac-pintureci/timeline)
+
+[Enlace del taiga](https://tree.taiga.io/project/juan-espinosac-pintureci/timeline)
+
 ## Authors
 
 * [David Pérez](https://github.com/DavidPZ666)
