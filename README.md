@@ -38,8 +38,6 @@ Se realizará una adaptación del famoso juego online pinturillo en el que los j
 - Pantalla de inicio: Existe una pantalla de inicio en la cual el usuario podrá seleccionar un nombre de usuario (que no es único es decir en otra partida podrá ser seleccionado por otro usuario) , también podrá seleccionar un avatar (una imagen o dejar una por defecto), luego seleccionara un equipo en los que se encontraran las diferentes carreras de pregrado de la escuela, una vez los jugadores estén listos y han personalizado sus jugadores se dará inicio al juego.
 - Pantalla de juego: Una vez iniciada la ronda se mostrará el tablero de dibujo, adicionalmente se muestra el chat donde los jugadores podrán escribir concurrentemente, mientras el equipo que tenga el turno de dibujar podrá dibujar simultáneamente.
 - Puntuación: Las rondas tendrán de duración de 90 segundos donde mientras un equipo está dibujando los demás equipos intentan adivinar la palabra para ganar puntos. Mientras menos tiempo gasten en adivinar la palabra más puntaje se le otorgara al equipo que haya acertado.
-- Power ups: Mientras transcurre la partida los equipos podrán obtener power ups que les darán ventaja o le darán una desventaja al rival. Entre ellos están ocultar pantalla, bloquear chat.
-- Pantalla final: Una vez finalizadas las rondas se hará el conteo de puntos por equipo se dará a conocer el equipo ganador. Dando la opción a los jugadores de volver a jugar.
 
 ## Sprint 1
 
