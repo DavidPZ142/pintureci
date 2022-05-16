@@ -39,7 +39,7 @@ public class STOMPMessagesHandler {
 
     @MessageMapping("/message")
     public void handleChat(String mensaje) {
-
+        System.out.println("message: "+ mensaje);
         msgt.convertAndSend("/topic/message", mensaje);
     }
 }
