@@ -1,5 +1,11 @@
 # Pintureci
 
+## Authors
+
+* [David Pérez](https://github.com/DavidPZ666)
+* [Juan Espinosa](https://github.com/Juancode-Espi)
+* [Nicolas Camacho](https://github.com/haatom)
+
 ## Integracion continua
 [![CircleCI](https://circleci.com/gh/DavidPZ666/pintureci/tree/master.svg?style=svg)](https://circleci.com/gh/DavidPZ666/pintureci/tree/master)
 
@@ -7,11 +13,18 @@
 
 [Enlace del taiga](https://tree.taiga.io/project/juan-espinosac-pintureci/timeline)
 
-## Authors
+## Arquitectura
 
-* [David Pérez](https://github.com/DavidPZ666)
-* [Juan Espinosa](https://github.com/Juancode-Espi)
-* [Nicolas Camacho](https://github.com/haatom)
+[Enlace Documento de Arquitectura](https://github.com/DavidPZ666/pintureci/blob/master/Documento%20de%20Arquitectura.pdf)
+
+## Conexión
+
+BALANCEADOR: 20.119.107.182 
+
+MAQUINA 1: ssh -i PinturECI01_key.pem azureuser@40.76.243.251
+
+MAQUINA 2: ssh -i PinturECI03_key.pem azureuser@20.84.62.144
+
 
 ## Deployed 
 [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://pintureci.herokuapp.com/)
